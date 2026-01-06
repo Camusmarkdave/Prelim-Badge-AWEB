@@ -1,4 +1,34 @@
-<h2>About Us</h2>
-<p>We organize the best conferences in the Alps.</p>
-<button class="btn btn-primary" (click)="claimGift()">Get Free Gift</button>
-<p class="mt-2 text-success">{{ message }}</p>
+<div class="position-relative text-center text-white mb-5"
+     [style.backgroundImage]="'url(' + heroImage + ')'"
+     style="background-size: cover; background-position: center; height: 400px; display: flex; align-items: center; justify-content: center;">
+
+  <div class="position-absolute w-100 h-100 bg-dark" style="opacity: 0.6;"></div>
+
+  <div class="position-relative z-1 p-4">
+    <h1 class="display-4 fw-bold">About the Organization</h1>
+    <p class="lead mb-0">Bridging Innovation & Tradition in the Heart of Europe</p>
+  </div>
+</div>
+
+<div class="container mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+
+      <h2 class="mb-4">Our Mission</h2>
+      <p class="text-muted" style="font-size: 1.1rem; line-height: 1.8;">
+        We believe in transparency, global cooperation, and the free exchange of talent and ideas.
+        Founded in Zurich, our organization serves as a premier forum for technical and humanitarian discussions,
+        hosting over 50 conferences annually across the Swiss Confederation.
+      </p>
+      <p class="text-muted" style="font-size: 1.1rem; line-height: 1.8;">
+        We are committed to creating a secure, constructive, and supportive atmosphere for all participants.
+        Conferences are a part of the legacy of this organization and continue today to be a catalyst for creativity.
+        From the diplomatic hubs of Geneva to the financial centers of Zurich, we are dedicated to developing strategies
+        that support and expand conference activities throughout the world.
+      </p>
+
+      <hr class="my-5">
+
+    </div>
+  </div>
+</div>

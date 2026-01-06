@@ -1,12 +1,72 @@
-<h2>Join Us</h2>
-<div class="mb-3">
-  <label>Name:</label>
-  <input class="form-control" [(ngModel)]="firstName" placeholder="Enter name">
+<div class="position-relative text-center text-white mb-5"
+     [style.backgroundImage]="'url(' + heroImage + ')'"
+     style="background-size: cover; background-position: center; height: 350px; display: flex; align-items: center; justify-content: center;">
+
+  <div class="position-absolute w-100 h-100 bg-dark" style="opacity: 0.6;"></div>
+
+  <div class="position-relative z-1 p-4">
+    <h1 class="display-4 fw-bold">Join Our Community</h1>
+    <p class="lead">Be part of the global conversation on Swiss innovation.</p>
+  </div>
 </div>
-<div class="mb-3">
-  <label>Email:</label>
-  <input class="form-control" [(ngModel)]="email" placeholder="Enter email">
-</div>
-<div class="alert alert-success">
-  <strong>Review:</strong> {{ firstName }} ({{ email }})
+
+<div class="container mb-5">
+  <div class="row">
+
+    <div class="col-lg-7 mb-4">
+      <div class="card shadow-lg border-0 rounded-3 h-100">
+        <div class="card-header bg-dark text-white p-4 rounded-top">
+          <h3 class="mb-0">Fill the form below</h3>
+        </div>
+
+        <div class="card-body p-4">
+          <div class="mb-3">
+            <label class="form-label fw-bold">First Name</label>
+            <input type="text" class="form-control" [(ngModel)]="firstName" placeholder="Enter first name">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold">Last Name</label>
+            <input type="text" class="form-control" [(ngModel)]="lastName" placeholder="Enter last name">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold">Email Address</label>
+            <input type="email" class="form-control" [(ngModel)]="email" placeholder="example@email.com">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold">Institution / Affiliation</label>
+            <input type="text" class="form-control" [(ngModel)]="institution" placeholder="University or Company">
+          </div>
+
+          <div class="d-grid mt-4">
+            <button class="btn btn-outline-dark btn-lg">Register Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5 mb-4">
+      <div class="card shadow-sm border h-100 bg-light">
+        <div class="card-body text-center d-flex flex-column justify-content-center">
+          <h4 class="text-muted mb-3">Live Preview</h4>
+          <p class="text-secondary small">Your badge details will appear here as you type.</p>
+
+          <hr class="w-50 mx-auto my-3">
+
+          <div class="p-3">
+            <h2 class="fw-bold text-dark">{{ firstName }} {{ lastName }}</h2>
+            <p class="text-primary fw-bold mb-1">{{ institution }}</p>
+            <p class="text-muted">{{ email }}</p>
+          </div>
+
+          <div class="mt-4 pt-3 border-top">
+             <span class="badge bg-danger rounded-pill px-3 py-2"> VISITOR BADGE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>

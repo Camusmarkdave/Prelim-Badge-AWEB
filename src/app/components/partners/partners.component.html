@@ -1,11 +1,51 @@
-<h2>Our Partners</h2>
-<table class="table table-striped">
-  <thead><tr><th>Company</th><th>Level</th><th>Website</th></tr></thead>
-  <tbody>
-    <tr *ngFor="let p of partners">
-      <td>{{ p.name }}</td>
-      <td>{{ p.type }}</td>
-      <td><a [href]="p.website">Link</a></td>
-    </tr>
-  </tbody>
-</table>
+<div class="position-relative text-center text-white mb-5"
+     [style.backgroundImage]="'url(' + heroImage + ')'"
+     style="background-size: cover; background-position: center; height: 400px; display: flex; align-items: center; justify-content: center;">
+
+  <div class="position-absolute w-100 h-100 bg-dark" style="opacity: 0.5;"></div>
+
+  <div class="position-relative z-1 p-4">
+    <h1 class="display-4 fw-bold">Our Partners</h1>
+    <p class="lead mb-4">You can achieve a very impressive effect by partnering with Switzerland's finest.</p>
+    <button class="btn btn-outline-light btn-lg px-4">Become a Sponsor</button>
+  </div>
+</div>
+
+<div class="container mb-5">
+  <h3 class="text-center mb-4">Below are our Corporate Partners</h3>
+
+  <div class="table-responsive shadow-sm">
+    <table class="table table-bordered table-hover align-middle">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">Company</th>
+          <th scope="col">Trademark</th>
+          <th scope="col">Sponsorship</th>
+          <th scope="col">Go to Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of partners">
+          <td class="fw-bold">{{ p.name }}</td>
+          <td>
+            <img [src]="p.logo" [alt]="p.name" style="height: 80px; max-width: 150px; object-fit: contain;">
+          </td>
+          <td>
+            <span class="badge"
+                  [ngClass]="{
+                    'bg-dark': p.type === 'Platinum',
+                    'bg-warning text-dark': p.type === 'Gold',
+                    'bg-secondary': p.type === 'Silver',
+                    'bg-danger': p.type === 'Bronze'
+                  }">
+              {{ p.type }}
+            </span>
+          </td>
+          <td>
+            <a [href]="p.website" target="_blank" class="text-decoration-none">View website</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

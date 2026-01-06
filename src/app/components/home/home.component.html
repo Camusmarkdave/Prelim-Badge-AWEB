@@ -1,9 +1,24 @@
-<div class="p-5 text-center bg-light rounded" [style.backgroundImage]="'url(' + heroImage + ')'" style="background-size: cover; height: 400px; color: white; text-shadow: 2px 2px 4px black;">
-  <h1 class="display-4">{{ mainTitle }}</h1>
+<div class="p-5 text-center bg-dark rounded mb-5"
+     [style.backgroundImage]="'url(' + heroImage + ')'"
+     style="background-size: cover; background-position: center; height: 400px; color: white; text-shadow: 2px 2px 4px black; display: flex; flex-direction: column; justify-content: center;">
+  <h1 class="display-4 fw-bold">{{ mainTitle }}</h1>
   <p class="lead">{{ subTitle }}</p>
 </div>
-<div class="row mt-4">
-  <div class="col-md-4"><div class="card p-3"><h3>Zermatt</h3><p>Home of the Matterhorn.</p></div></div>
-  <div class="col-md-4"><div class="card p-3"><h3>Lucerne</h3><p>The gateway to central Switzerland.</p></div></div>
-  <div class="col-md-4"><div class="card p-3"><h3>Geneva</h3><p>Global hub for diplomacy.</p></div></div>
+
+<div class="container mb-5">
+  <h2 class="text-center mb-4">Top Destinations</h2>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6 mb-4" *ngFor="let place of destinations">
+      <div class="card h-100 shadow-sm">
+        <img [src]="place.image" class="card-img-top" [alt]="place.name" style="height: 200px; object-fit: cover;">
+
+        <div class="card-body">
+          <h5 class="card-title">{{ place.name }}</h5>
+          <p class="card-text">{{ place.description }}</p>
+          <a routerLink="/join" class="btn btn-outline-danger btn-sm">View More</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
