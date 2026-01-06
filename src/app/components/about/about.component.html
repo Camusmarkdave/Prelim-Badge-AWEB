@@ -29,6 +29,19 @@
 
       <hr class="my-5">
 
+      <div class="text-center p-4 bg-light rounded shadow-sm border">
+        <h3>Member Exclusive</h3>
+        <p>As a token of appreciation for visiting our headquarters online, we have a special surprise for you.</p>
+
+        <div class="alert alert-success mt-3" *ngIf="giftMessage">
+          <strong>{{ giftMessage }}</strong>
+        </div>
+
+        <button class="btn btn-danger btn-lg mt-2" (click)="claimGift()">
+          Click here to get a FREE Gift!
+        </button>
+      </div>
+
     </div>
   </div>
 </div>
